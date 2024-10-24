@@ -1,22 +1,23 @@
-# Text-to-Speech Automation Script
 
-This repository contains a Jupyter Notebook that generates a shell script to process a text file using a Text-to-Speech (TTS) model. The script allows you to convert text into speech using customizable parameters, such as speaker ID and chunk size, and then combines the generated audio files into one consolidated output file.
+# 🗣️ Text-to-Speech Automation Script
 
-Demo: https://youtu.be/pEgqffQKGUI
+This repository contains a Jupyter Notebook that generates a shell script to automate text processing using a Text-to-Speech (TTS) model. The script allows you to convert text into speech with customizable parameters, such as speaker ID and chunk size, then consolidates the generated audio files into a single output.
 
-## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Arguments](#arguments)
-4. [Available Speakers](#available-speakers)
-5. [Output](#output)
-6. [License](#license)
+🎥 **Demo:** [Watch here](https://youtu.be/pEgqffQKGUI)
+
+## 📑 Table of Contents
+1. [💻 Installation](#installation)
+2. [📖 Usage](#usage)
+3. [⚙️ Arguments](#arguments)
+4. [🔊 Available Speakers](#available-speakers)
+5. [📂 Output](#output)
+6. [📜 License](#license)
 
 ---
 
-## Installation
+## 💻 Installation
 
-Before running the notebook, you need to install the required dependencies.
+Before running the notebook, ensure the required dependencies are installed.
 
 1. Install the `TTS` package:
 
@@ -30,57 +31,57 @@ Before running the notebook, you need to install the required dependencies.
     !sudo apt-get install sox libsox-fmt-all
     ```
 
-3. Ensure that you have a text file (`.txt`) with the content you want to convert into speech. Update the `txt_file` variable in the notebook to point to the correct file.
+3. Ensure you have a text file (`.txt`) containing the content to be converted into speech. Update the `txt_file` variable in the notebook to point to the correct file.
 
 ---
 
-## Usage
+## 📖 Usage
 
 1. Clone the repository and open the notebook in a Jupyter environment.
 
 2. Modify the following parameters inside the notebook:
    - `txt_file`: The name of your text file.
-   - `speaker_id`: The ID of the speaker's voice to be used.
-   - `words_to_process_once`: The number of words to process at a time (default is 10).
+   - `speaker_id`: The ID of the speaker's voice.
+   - `words_to_process_once`: Number of words to process at a time (default is 10).
 
-3. After updating the parameters, run the notebook cells to:
-   - Generate a shell script named `run_tts.sh`.
-   - Convert text chunks into speech files using the selected TTS model.
-   - Concatenate the generated audio files into one final output file.
+3. Run the notebook to:
+   - Generate a shell script (`run_tts.sh`).
+   - Convert text chunks into speech using the chosen TTS model.
+   - Concatenate the generated audio files into a single output file.
 
-4. Once the script is generated, it can be run with:
+4. Run the generated script with:
 
     ```bash
     !chmod +x run_tts.sh
     !./run_tts.sh
     ```
 
-This will produce a series of `.wav` files for each chunk of text and concatenate them into a single file called `consolidated_output.wav`.
+This produces a series of `.wav` files for each text chunk, which are then concatenated into a single file named `consolidated_output.wav`.
 
 ---
 
-## Arguments
+## ⚙️ Arguments
 
-The notebook generates a shell script that accepts the following arguments:
+The shell script accepts the following arguments:
 
 1. `txt_file_name` (str):  
-   **Description**: Name of the text file containing the input text to be converted into speech.  
+   **Description**: Name of the text file containing the input text.  
    **Example**: `sample1.txt`.
 
 2. `speaker_id` (str, optional):  
-   **Description**: The speaker ID to be used for voice generation. A list of available speakers is provided in the next section.  
+   **Description**: The speaker ID for voice generation.  
    **Default**: `"Viktor Eka"`.
 
 3. `words_to_process_once` (int, optional):  
-   **Description**: Number of words to process at a time for each audio chunk.  
+   **Description**: Number of words to process per audio chunk.  
    **Default**: `10`.  
    **Example**: `60` to process 60 words at a time.
 
 ---
 
-## Available Speakers
+## 🔊 Available Speakers
 
-The following speakers are available for use with the TTS model. You can specify the speaker ID in the `speaker_id` argument when generating the shell script:
+Below is a list of available speakers for the TTS model. Specify the `speaker_id` when generating the shell script:
 
 ```
 ['Claribel Dervla', 'Daisy Studious', 'Gracie Wise', 'Tammie Ema', 'Alison Dietlinde',
@@ -99,13 +100,13 @@ The following speakers are available for use with the TTS model. You can specify
 
 ---
 
-## Output
+## 📂 Output
 
-- For each chunk of text, an individual `.wav` file is generated, such as `out_chunk_0.wav`, `out_chunk_1.wav`, and so on.
-- After processing all text chunks, the script uses `sox` to concatenate all generated `.wav` files into a single output file named `consolidated_output.wav`.
+- Each chunk of text generates an individual `.wav` file (e.g., `out_chunk_0.wav`, `out_chunk_1.wav`, etc.).
+- After processing all text chunks, the script uses `sox` to combine the `.wav` files into a single output file named `consolidated_output.wav`.
 
 ---
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
