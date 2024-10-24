@@ -1,7 +1,3 @@
-Here is a detailed `README.md` for your GitHub repository:
-
----
-
 # Text-to-Speech Automation Script
 
 This repository contains a Jupyter Notebook that generates a shell script to process a text file using a Text-to-Speech (TTS) model. The script allows you to convert text into speech using customizable parameters, such as speaker ID and chunk size, and then combines the generated audio files into one consolidated output file.
